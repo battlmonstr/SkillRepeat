@@ -7,11 +7,14 @@ struct NextUpView: View {
         List(skills.items, id: \.name) { skill in
             NextUpRow(skill: skill)
         }
+        .navigationBarTitle("Next up")
     }
 }
 
 struct NextUpView_Previews: PreviewProvider {
     static var previews: some View {
-        NextUpView(skills: Skills.testInstance)
+        NavigationView {
+            NextUpView(skills: Skills.testInstance)
+        }
     }
 }

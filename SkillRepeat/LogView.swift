@@ -9,12 +9,15 @@ struct LogView: View {
             Text(entry.dateString(locale: self.locale))
             Text(entry.skill.name)
         }
+        .navigationBarTitle("Log")
     }
 }
 
 struct LogView_Previews: PreviewProvider {
     static var previews: some View {
-        LogView(log: Log.testInstance)
-            .environment(\.locale, Locale(identifier: "ru"))
+        NavigationView {
+            LogView(log: Log.testInstance)
+        }
+        .environment(\.locale, Locale(identifier: "ru"))
     }
 }
