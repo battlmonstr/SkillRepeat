@@ -8,6 +8,8 @@ struct NextUpView: View {
         List(skills.items, id: \.name) { skill in
             NextUpRow(
                 skill: skill,
+                isDoneToday: false,
+                isDoneYesterday: false,
                 calendarViewFactory: self.calendarViewFactory())
         }
         .navigationBarTitle("Next up")

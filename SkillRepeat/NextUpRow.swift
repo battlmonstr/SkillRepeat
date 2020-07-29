@@ -2,6 +2,10 @@ import SwiftUI
 
 struct NextUpRow: View {
     let skill: Skill
+
+    let isDoneToday: Bool
+    let isDoneYesterday: Bool
+
     typealias CalendarViewFactory = (Skill) -> CalendarView?
     let calendarViewFactory: CalendarViewFactory
 
@@ -19,13 +23,13 @@ struct NextUpRow: View {
                 }
             }
             .buttonStyle(self.buttonStyle)
-            .doneAccent(isDone: true)
+            .doneAccent(isDone: self.isDoneToday)
 
             Button(action: self.doneYesterday) {
                 Text("yesterday")
             }
             .buttonStyle(self.buttonStyle)
-            .doneAccent(isDone: false)
+            .doneAccent(isDone: self.isDoneYesterday)
 
             Button(action: showCalendar) {
                 Image(systemName: "calendar")
@@ -61,9 +65,13 @@ struct NextUpRow_Previews: PreviewProvider {
         Group {
             NextUpRow(
                 skill: Skills.testInstance.items[0],
+                isDoneToday: true,
+                isDoneYesterday: false,
                 calendarViewFactory: { _ in nil })
             NextUpRow(
                 skill: Skills.testInstance.items[1],
+                isDoneToday: false,
+                isDoneYesterday: true,
                 calendarViewFactory: { _ in nil })
         }
         .previewLayout(.fixed(width: 300, height: 50))
