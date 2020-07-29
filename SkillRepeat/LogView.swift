@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LogView: View {
-    let log: Log
+    @ObservedObject private(set) var log: Log
     @Environment(\.locale) var locale
 
     var body: some View {

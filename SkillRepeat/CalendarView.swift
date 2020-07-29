@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CalendarView: View {
     let skill: Skill
+    @ObservedObject private(set) var log: Log
 
     private let calendar = Calendar()
     @Environment(\.locale) var locale
@@ -34,8 +35,10 @@ struct CalendarView: View {
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CalendarView(skill: Skills.testInstance.items[0])
-                .environment(\.locale, Locale(identifier: "ru"))
+            CalendarView(
+                skill: Skills.testInstance.items[0],
+                log: Log.testInstance)
         }
+        .environment(\.locale, Locale(identifier: "ru"))
     }
 }

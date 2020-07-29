@@ -8,7 +8,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            NextUpView(skills: skills)
+            NextUpView(skills: skills, log: log)
                 .tabItem { nextUpTabItem }
                 .tag(0)
             LogView(log: log)

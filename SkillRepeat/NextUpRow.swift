@@ -2,6 +2,8 @@ import SwiftUI
 
 struct NextUpRow: View {
     let skill: Skill
+    typealias CalendarViewFactory = (Skill) -> CalendarView?
+    let calendarViewFactory: CalendarViewFactory
 
     @State private var isCalendarShown = false
 
@@ -31,7 +33,7 @@ struct NextUpRow: View {
             .buttonStyle(self.buttonStyle)
             .sheet(isPresented: $isCalendarShown) {
                 NavigationView {
-                    CalendarView(skill: self.skill)
+                    self.calendarViewFactory(self.skill)
                 }
             }
         }
@@ -57,8 +59,12 @@ struct NextUpRow: View {
 struct NextUpRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NextUpRow(skill: Skills.testInstance.items[0])
-            NextUpRow(skill: Skills.testInstance.items[1])
+            NextUpRow(
+                skill: Skills.testInstance.items[0],
+                calendarViewFactory: { _ in nil })
+            NextUpRow(
+                skill: Skills.testInstance.items[1],
+                calendarViewFactory: { _ in nil })
         }
         .previewLayout(.fixed(width: 300, height: 50))
     }

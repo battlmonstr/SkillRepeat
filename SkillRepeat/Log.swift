@@ -17,7 +17,7 @@ struct LogEntryList: Codable {
     let entries: [LogEntry]
 }
 
-class Log {
+class Log: ObservableObject {
     let entries: [LogEntry]
 
     init(_ entries: [LogEntry]) {
