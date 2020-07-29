@@ -1,0 +1,10 @@
+planche
+f.lever
+b.lever
+flag
+handstand
+giants
+dynamic
+flare
+rings
+splits
