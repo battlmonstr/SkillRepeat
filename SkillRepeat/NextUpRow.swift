@@ -17,11 +17,13 @@ struct NextUpRow: View {
                 }
             }
             .buttonStyle(self.buttonStyle)
+            .doneAccent(isDone: true)
 
             Button(action: self.doneYesterday) {
                 Text("yesterday")
             }
             .buttonStyle(self.buttonStyle)
+            .doneAccent(isDone: false)
 
             Button(action: showCalendar) {
                 Image(systemName: "calendar")

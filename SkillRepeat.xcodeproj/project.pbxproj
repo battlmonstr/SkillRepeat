@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6521EDE724D1E6B9003FEAA5 /* DoneAccent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */; };
 		65AABE7E24D183C700136986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE7D24D183C700136986 /* AppDelegate.swift */; };
 		65AABE8024D183C700136986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE7F24D183C700136986 /* SceneDelegate.swift */; };
 		65AABE8224D183C700136986 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE8124D183C700136986 /* ContentView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAccent.swift; sourceTree = "<group>"; };
 		65AABE7A24D183C700136986 /* SkillRepeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillRepeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AABE7D24D183C700136986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65AABE7F24D183C700136986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				65AABE9F24D1BF8D00136986 /* Calendar.swift */,
 				65AABE9D24D1BE6100136986 /* CalendarView.swift */,
 				65AABE8124D183C700136986 /* ContentView.swift */,
+				6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */,
 				65AABE8B24D183C900136986 /* Info.plist */,
 				65AABE8824D183C900136986 /* LaunchScreen.storyboard */,
 				65AABE9324D1A3BE00136986 /* Log.swift */,
@@ -178,6 +181,7 @@
 				65AABE8024D183C700136986 /* SceneDelegate.swift in Sources */,
 				65AABE9E24D1BE6100136986 /* CalendarView.swift in Sources */,
 				65AABE8224D183C700136986 /* ContentView.swift in Sources */,
+				6521EDE724D1E6B9003FEAA5 /* DoneAccent.swift in Sources */,
 				65AABE9C24D1AB4100136986 /* NextUpRow.swift in Sources */,
 				65AABE9824D1A53800136986 /* LogView.swift in Sources */,
 				65AABEA024D1BF8D00136986 /* Calendar.swift in Sources */,
