@@ -49,6 +49,10 @@ class Log: ObservableObject {
         return entries.contains { ($0.skill == skill) && $0.date.compare(.isYesterday) }
     }
 
+    func isDoneOnDay(day: Date, skill: Skill) -> Bool {
+        return entries.contains { ($0.skill == skill) && $0.date.compare(.isSameDay(day)) }
+    }
+
     static var testInstance: Log {
         let skills = Skills.testInstance.items
 

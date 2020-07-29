@@ -18,7 +18,7 @@ struct CalendarView: View {
                 }
             }
             .buttonStyle(self.buttonStyle)
-            .doneAccent(isDone: false)
+            .doneAccent(isDone: self.log.isDoneOnDay(day: day, skill: self.skill))
         }
         .navigationBarTitle(self.skill.name)
     }
