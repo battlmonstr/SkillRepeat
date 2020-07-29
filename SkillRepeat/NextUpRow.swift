@@ -16,13 +16,17 @@ struct NextUpRow: View {
                     Text("today")
                 }
             }
+            .buttonStyle(self.buttonStyle)
+
             Button(action: self.doneYesterday) {
                 Text("yesterday")
             }
+            .buttonStyle(self.buttonStyle)
 
             Button(action: showCalendar) {
                 Image(systemName: "calendar")
             }
+            .buttonStyle(self.buttonStyle)
             .sheet(isPresented: $isCalendarShown) {
                 NavigationView {
                     CalendarView(skill: self.skill)
@@ -31,10 +35,16 @@ struct NextUpRow: View {
         }
     }
 
+    private var buttonStyle: some PrimitiveButtonStyle {
+        return BorderlessButtonStyle()
+    }
+
     func doneToday() {
+        print("doneToday")
     }
 
     func doneYesterday() {
+        print("doneYesterday")
     }
 
     func showCalendar() {
