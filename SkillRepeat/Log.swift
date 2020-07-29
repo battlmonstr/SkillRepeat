@@ -1,4 +1,5 @@
 import Foundation
+import SwiftDate
 
 struct LogEntry: Codable {
     let date: Date
@@ -40,6 +41,14 @@ class Log: ObservableObject {
         self.init(entries)
     }
 
+    func isDoneToday(_ skill: Skill) -> Bool {
+        return entries.contains { ($0.skill == skill) && $0.date.compare(.isToday) }
+    }
+
+    func isDoneYesterday(_ skill: Skill) -> Bool {
+        return entries.contains { ($0.skill == skill) && $0.date.compare(.isYesterday) }
+    }
+
     static var testInstance: Log {
         let skills = Skills.testInstance.items
 
@@ -50,8 +59,8 @@ class Log: ObservableObject {
 
         return Log([
             LogEntry(date: day1, skill: skills[0]),
-            LogEntry(date: day2, skill: skills[1]),
-            LogEntry(date: day2, skill: skills[1]),
+            LogEntry(date: day2, skill: skills[0]),
+            LogEntry(date: day2.addingTimeInterval(1), skill: skills[1]),
             LogEntry(date: day3, skill: skills[2]),
         ])
     }

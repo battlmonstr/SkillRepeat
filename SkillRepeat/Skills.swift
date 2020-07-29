@@ -1,8 +1,12 @@
 import Foundation
 
-struct Skill: CustomDebugStringConvertible, Codable {
+struct Skill: CustomDebugStringConvertible, Codable, Equatable {
     let name: String
     var debugDescription: String { name }
+
+    static func == (lhs: Skill, rhs: Skill) -> Bool {
+        return lhs.name == rhs.name
+    }
 }
 
 class Skills {
@@ -25,6 +29,7 @@ class Skills {
             Skill(name: "reading"),
             Skill(name: "running"),
             Skill(name: "programming"),
+            Skill(name: "music"),
         ])
     }
 }
