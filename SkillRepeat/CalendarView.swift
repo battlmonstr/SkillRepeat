@@ -16,8 +16,13 @@ struct CalendarView: View {
                     Text(Calendar.dateString(date: day, locale: self.locale))
                 }
             }
+            .buttonStyle(self.buttonStyle)
         }
         .navigationBarTitle(self.skill.name)
+    }
+
+    private var buttonStyle: some PrimitiveButtonStyle {
+        return BorderlessButtonStyle()
     }
 
     func doneOnDay() {
