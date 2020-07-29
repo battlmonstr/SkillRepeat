@@ -3,6 +3,8 @@ import SwiftUI
 struct NextUpRow: View {
     let skill: Skill
 
+    @State private var isCalendarShown = false
+
     var body: some View {
         HStack {
             Text(skill.name)
@@ -17,8 +19,14 @@ struct NextUpRow: View {
             Button(action: self.doneYesterday) {
                 Text("yesterday")
             }
-            NavigationLink(destination: CalendarView(skill: skill)) {
+
+            Button(action: showCalendar) {
                 Image(systemName: "calendar")
+            }
+            .sheet(isPresented: $isCalendarShown) {
+                NavigationView {
+                    CalendarView(skill: self.skill)
+                }
             }
         }
     }
@@ -30,6 +38,7 @@ struct NextUpRow: View {
     }
 
     func showCalendar() {
+        isCalendarShown = true
     }
 }
 
