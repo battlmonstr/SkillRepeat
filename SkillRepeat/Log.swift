@@ -19,7 +19,7 @@ struct LogEntryList: Codable {
 }
 
 class Log: ObservableObject {
-    let entries: [LogEntry]
+    private(set) var entries: [LogEntry]
 
     init(_ entries: [LogEntry]) {
         self.entries = entries
@@ -42,15 +42,41 @@ class Log: ObservableObject {
     }
 
     func isDoneToday(_ skill: Skill) -> Bool {
-        return entries.contains { ($0.skill == skill) && $0.date.compare(.isToday) }
+        return isDoneOnDay(day: Date(), skill: skill)
     }
 
     func isDoneYesterday(_ skill: Skill) -> Bool {
-        return entries.contains { ($0.skill == skill) && $0.date.compare(.isYesterday) }
+        return isDoneOnDay(day: Date().dateAt(.yesterday), skill: skill)
     }
 
     func isDoneOnDay(day: Date, skill: Skill) -> Bool {
         return entries.contains { ($0.skill == skill) && $0.date.compare(.isSameDay(day)) }
+    }
+
+    func toggleDoneToday(_ skill: Skill) {
+        toggleDoneOnDay(day: Date(), skill: skill)
+    }
+
+    func toggleDoneYesterday(_ skill: Skill) {
+        toggleDoneOnDay(day: Date().dateAt(.yesterday), skill: skill)
+    }
+
+    func toggleDoneOnDay(day: Date, skill: Skill) {
+        if isDoneOnDay(day: day, skill: skill) {
+            removeDayEntries(day: day, skill: skill)
+        } else {
+            addEntry(date: day, skill: skill)
+        }
+    }
+
+    private func addEntry(date: Date, skill: Skill) {
+        entries.append(LogEntry(date: date, skill: skill))
+        self.objectWillChange.send()
+    }
+
+    private func removeDayEntries(day: Date, skill: Skill) {
+        entries.removeAll { ($0.skill == skill) && $0.date.compare(.isSameDay(day)) }
+        self.objectWillChange.send()
     }
 
     static var testInstance: Log {

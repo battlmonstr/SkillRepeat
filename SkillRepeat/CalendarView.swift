@@ -9,7 +9,7 @@ struct CalendarView: View {
 
     var body: some View {
         List(calendar.recentDays, id: \.self) { day in
-            Button(action: self.doneOnDay) {
+            Button(action: { /* TODO: weak? */ self.doneOnDay(day: day) }) {
                 HStack {
                     Image(systemName: "checkmark")
                     Text("done")
@@ -27,8 +27,8 @@ struct CalendarView: View {
         return BorderlessButtonStyle()
     }
 
-    func doneOnDay() {
-
+    func doneOnDay(day: Date) {
+        self.log.toggleDoneOnDay(day: day, skill: self.skill)
     }
 }
 

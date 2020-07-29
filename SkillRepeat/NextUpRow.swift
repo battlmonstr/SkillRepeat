@@ -4,7 +4,9 @@ struct NextUpRow: View {
     let skill: Skill
 
     let isDoneToday: Bool
+    let doneTodayAction: () -> Void
     let isDoneYesterday: Bool
+    let doneYesterdayAction: () -> Void
 
     typealias CalendarViewFactory = (Skill) -> CalendarView?
     let calendarViewFactory: CalendarViewFactory
@@ -48,11 +50,11 @@ struct NextUpRow: View {
     }
 
     func doneToday() {
-        print("doneToday")
+        self.doneTodayAction()
     }
 
     func doneYesterday() {
-        print("doneYesterday")
+        self.doneYesterdayAction()
     }
 
     func showCalendar() {
@@ -66,12 +68,16 @@ struct NextUpRow_Previews: PreviewProvider {
             NextUpRow(
                 skill: Skills.testInstance.items[0],
                 isDoneToday: true,
+                doneTodayAction: {},
                 isDoneYesterday: false,
+                doneYesterdayAction: {},
                 calendarViewFactory: { _ in nil })
             NextUpRow(
                 skill: Skills.testInstance.items[1],
                 isDoneToday: false,
+                doneTodayAction: {},
                 isDoneYesterday: true,
+                doneYesterdayAction: {},
                 calendarViewFactory: { _ in nil })
         }
         .previewLayout(.fixed(width: 300, height: 50))
