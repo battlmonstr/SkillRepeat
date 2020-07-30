@@ -50,13 +50,18 @@ class Log: ObservableObject {
     }
 
     private func addEntry(date: Date, skill: Skill) {
-        entries.append(LogEntry(date: date, skill: skill))
-        entries.sort(by: { $0.date < $1.date })
+        entries.insert(LogEntry(date: date, skill: skill), at: 0)
+        entries.sort(by: { $0.date > $1.date })
         self.objectWillChange.send()
     }
 
     private func removeDayEntries(day: Date, skill: Skill) {
         entries.removeAll { ($0.skill == skill) && $0.date.compare(.isSameDay(day)) }
+        self.objectWillChange.send()
+    }
+
+    func removeEntries(atOffsets offsets: IndexSet) {
+        entries.remove(atOffsets: offsets)
         self.objectWillChange.send()
     }
 
@@ -69,10 +74,10 @@ class Log: ObservableObject {
         let day3 = Date(timeIntervalSinceNow: -dayInterval * 0)
 
         return Log([
-            LogEntry(date: day1, skill: skills[0]),
-            LogEntry(date: day2, skill: skills[0]),
-            LogEntry(date: day2.addingTimeInterval(1), skill: skills[1]),
             LogEntry(date: day3, skill: skills[2]),
+            LogEntry(date: day2.addingTimeInterval(1), skill: skills[1]),
+            LogEntry(date: day2, skill: skills[0]),
+            LogEntry(date: day1, skill: skills[0]),
         ])
     }
 }

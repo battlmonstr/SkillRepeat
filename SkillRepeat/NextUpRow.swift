@@ -33,7 +33,7 @@ struct NextUpRow: View {
             .buttonStyle(self.buttonStyle)
             .doneAccent(isDone: self.isDoneYesterday)
 
-            Button(action: showCalendar) {
+            Button(action: self.showCalendar) {
                 Image(systemName: "calendar")
             }
             .buttonStyle(self.buttonStyle)
@@ -49,15 +49,15 @@ struct NextUpRow: View {
         return BorderlessButtonStyle()
     }
 
-    func doneToday() {
+    private func doneToday() {
         self.doneTodayAction()
     }
 
-    func doneYesterday() {
+    private func doneYesterday() {
         self.doneYesterdayAction()
     }
 
-    func showCalendar() {
+    private func showCalendar() {
         isCalendarShown = true
     }
 }

@@ -5,11 +5,21 @@ struct LogView: View {
     @Environment(\.locale) var locale
 
     var body: some View {
-        List(log.entries.reversed(), id: \.date) { entry in
-            Text(entry.dateString(locale: self.locale))
-            Text(entry.skill.name)
+        List {
+            ForEach(log.entries, id: \.date) { entry in
+                HStack {
+                    Text(entry.dateString(locale: self.locale))
+                    Text(entry.skill.name)
+                }
+            }
+            .onDelete(perform: self.onDelete)
         }
         .navigationBarTitle("Log")
+        .navigationBarItems(trailing: EditButton())
+    }
+
+    private func onDelete(offsets: IndexSet) {
+        self.log.removeEntries(atOffsets: offsets)
     }
 }
 
