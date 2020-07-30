@@ -14,31 +14,11 @@ struct LogEntry: Codable {
     }
 }
 
-struct LogEntryList: Codable {
-    let entries: [LogEntry]
-}
-
 class Log: ObservableObject {
     private(set) var entries: [LogEntry]
 
     init(_ entries: [LogEntry]) {
         self.entries = entries
-    }
-
-    convenience init(jsonFileName: String) {
-        var entries: [LogEntry] = []
-
-        if let docsDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let logFileURL = docsDir.appendingPathComponent(jsonFileName)
-            if let logData = try? Data(contentsOf: logFileURL) {
-                let decoder = JSONDecoder()
-                if let logEntryList = try? decoder.decode(LogEntryList.self, from: logData) {
-                    entries = logEntryList.entries
-                }
-            }
-        }
-
-        self.init(entries)
     }
 
     func isDoneToday(_ skill: Skill) -> Bool {

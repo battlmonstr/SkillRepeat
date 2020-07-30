@@ -1,19 +1,43 @@
 import UIKit
 import SwiftUI
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private var skills: Skills?
+    private var logStore: LogStore?
+    private var log: Log?
+    private var logStoreUpdater: AnyCancellable?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        // Create the SwiftUI view that provides the window contents.
         let skills = Skills(resourceName: "street_workout_skills.txt")
-        let log = Log(jsonFileName: "log.json")
+        assert(self.skills == nil)
+        self.skills = skills
+
+        let logStore = LogStore(jsonFileName: "log.json")
+        assert(self.logStore == nil)
+        self.logStore = logStore
+
+        let log = Log((try? logStore.load()) ?? [])
+        assert(self.log == nil)
+        self.log = log
+
+        assert(self.logStoreUpdater == nil)
+        self.logStoreUpdater = log.objectWillChange.sink { [weak self] in
+            if let entries = self?.log?.entries {
+                do {
+                    try self?.logStore?.save(entries: entries)
+                } catch {
+                    print("logStore.save error: \(error)")
+                }
+            }
+        }
+
+        // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView(skills: skills, log: log)
 
         // Use a UIHostingController as window root view controller.

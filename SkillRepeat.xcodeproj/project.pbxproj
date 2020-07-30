@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651A043024D290790062162B /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A042F24D290790062162B /* LogStore.swift */; };
 		6521EDE724D1E6B9003FEAA5 /* DoneAccent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */; };
 		65919C4A24D215BB00B623BF /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 65919C4924D215BB00B623BF /* SwiftDate */; };
 		65AABE7E24D183C700136986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE7D24D183C700136986 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		651A042F24D290790062162B /* LogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
 		6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAccent.swift; sourceTree = "<group>"; };
 		6581E3F724D2249B006B56D7 /* SkillRepeat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillRepeat.entitlements; sourceTree = "<group>"; };
 		65AABE7A24D183C700136986 /* SkillRepeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillRepeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +79,6 @@
 		65AABE7C24D183C700136986 /* SkillRepeat */ = {
 			isa = PBXGroup;
 			children = (
-				6581E3F724D2249B006B56D7 /* SkillRepeat.entitlements */,
 				65AABE7D24D183C700136986 /* AppDelegate.swift */,
 				65AABE8324D183C900136986 /* Assets.xcassets */,
 				65AABE9F24D1BF8D00136986 /* Calendar.swift */,
@@ -87,11 +88,13 @@
 				65AABE8B24D183C900136986 /* Info.plist */,
 				65AABE8824D183C900136986 /* LaunchScreen.storyboard */,
 				65AABE9324D1A3BE00136986 /* Log.swift */,
+				651A042F24D290790062162B /* LogStore.swift */,
 				65AABE9724D1A53800136986 /* LogView.swift */,
 				65AABE9B24D1AB4100136986 /* NextUpRow.swift */,
 				65AABE9524D1A52E00136986 /* NextUpView.swift */,
 				65AABE8524D183C900136986 /* Preview Content */,
 				65AABE7F24D183C700136986 /* SceneDelegate.swift */,
+				6581E3F724D2249B006B56D7 /* SkillRepeat.entitlements */,
 				65AABE9124D1A36B00136986 /* Skills.swift */,
 				65AABE9924D1A5D700136986 /* street_workout_skills.txt */,
 			);
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651A043024D290790062162B /* LogStore.swift in Sources */,
 				65AABE9624D1A52E00136986 /* NextUpView.swift in Sources */,
 				65AABE7E24D183C700136986 /* AppDelegate.swift in Sources */,
 				65AABE9224D1A36B00136986 /* Skills.swift in Sources */,
