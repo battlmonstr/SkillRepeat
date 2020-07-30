@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		651A043024D290790062162B /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A042F24D290790062162B /* LogStore.swift */; };
+		651A043824D2AF920062162B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651A043324D2AF920062162B /* Assets.xcassets */; };
+		651A043924D2AF920062162B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651A043424D2AF920062162B /* LaunchScreen.storyboard */; };
+		651A043A24D2AF920062162B /* street_workout_skills.txt in Resources */ = {isa = PBXBuildFile; fileRef = 651A043624D2AF920062162B /* street_workout_skills.txt */; };
+		651A043E24D2B08B0062162B /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651A043D24D2B08B0062162B /* PreviewAssets.xcassets */; };
 		6521EDE724D1E6B9003FEAA5 /* DoneAccent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */; };
 		65919C4A24D215BB00B623BF /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 65919C4924D215BB00B623BF /* SwiftDate */; };
 		65AABE7E24D183C700136986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE7D24D183C700136986 /* AppDelegate.swift */; };
 		65AABE8024D183C700136986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE7F24D183C700136986 /* SceneDelegate.swift */; };
 		65AABE8224D183C700136986 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE8124D183C700136986 /* ContentView.swift */; };
-		65AABE8424D183C900136986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AABE8324D183C900136986 /* Assets.xcassets */; };
-		65AABE8724D183C900136986 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AABE8624D183C900136986 /* Preview Assets.xcassets */; };
-		65AABE8A24D183C900136986 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65AABE8824D183C900136986 /* LaunchScreen.storyboard */; };
 		65AABE9224D1A36B00136986 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE9124D1A36B00136986 /* Skills.swift */; };
 		65AABE9424D1A3BE00136986 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE9324D1A3BE00136986 /* Log.swift */; };
 		65AABE9624D1A52E00136986 /* NextUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE9524D1A52E00136986 /* NextUpView.swift */; };
 		65AABE9824D1A53800136986 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE9724D1A53800136986 /* LogView.swift */; };
-		65AABE9A24D1A5D700136986 /* street_workout_skills.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65AABE9924D1A5D700136986 /* street_workout_skills.txt */; };
 		65AABE9C24D1AB4100136986 /* NextUpRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE9B24D1AB4100136986 /* NextUpRow.swift */; };
 		65AABE9E24D1BE6100136986 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE9D24D1BE6100136986 /* CalendarView.swift */; };
 		65AABEA024D1BF8D00136986 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE9F24D1BF8D00136986 /* Calendar.swift */; };
@@ -28,21 +28,21 @@
 
 /* Begin PBXFileReference section */
 		651A042F24D290790062162B /* LogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
+		651A043224D2AF920062162B /* SkillRepeat.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SkillRepeat.entitlements; sourceTree = "<group>"; };
+		651A043324D2AF920062162B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		651A043524D2AF920062162B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		651A043624D2AF920062162B /* street_workout_skills.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = street_workout_skills.txt; sourceTree = "<group>"; };
+		651A043724D2AF920062162B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651A043D24D2B08B0062162B /* PreviewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PreviewAssets.xcassets; sourceTree = "<group>"; };
 		6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAccent.swift; sourceTree = "<group>"; };
-		6581E3F724D2249B006B56D7 /* SkillRepeat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillRepeat.entitlements; sourceTree = "<group>"; };
 		65AABE7A24D183C700136986 /* SkillRepeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillRepeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AABE7D24D183C700136986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65AABE7F24D183C700136986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		65AABE8124D183C700136986 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		65AABE8324D183C900136986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		65AABE8624D183C900136986 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		65AABE8924D183C900136986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		65AABE8B24D183C900136986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65AABE9124D1A36B00136986 /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		65AABE9324D1A3BE00136986 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		65AABE9524D1A52E00136986 /* NextUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextUpView.swift; sourceTree = "<group>"; };
 		65AABE9724D1A53800136986 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
-		65AABE9924D1A5D700136986 /* street_workout_skills.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = street_workout_skills.txt; sourceTree = "<group>"; };
 		65AABE9B24D1AB4100136986 /* NextUpRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextUpRow.swift; sourceTree = "<group>"; };
 		65AABE9D24D1BE6100136986 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		65AABE9F24D1BF8D00136986 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
@@ -60,6 +60,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		651A043124D2AF920062162B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				651A043C24D2B08B0062162B /* PreviewContent */,
+				651A043324D2AF920062162B /* Assets.xcassets */,
+				651A043724D2AF920062162B /* Info.plist */,
+				651A043424D2AF920062162B /* LaunchScreen.storyboard */,
+				651A043224D2AF920062162B /* SkillRepeat.entitlements */,
+				651A043624D2AF920062162B /* street_workout_skills.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		651A043C24D2B08B0062162B /* PreviewContent */ = {
+			isa = PBXGroup;
+			children = (
+				651A043D24D2B08B0062162B /* PreviewAssets.xcassets */,
+			);
+			path = PreviewContent;
+			sourceTree = "<group>";
+		};
 		65AABE7124D183C700136986 = {
 			isa = PBXGroup;
 			children = (
@@ -79,34 +100,21 @@
 		65AABE7C24D183C700136986 /* SkillRepeat */ = {
 			isa = PBXGroup;
 			children = (
+				651A043124D2AF920062162B /* Resources */,
 				65AABE7D24D183C700136986 /* AppDelegate.swift */,
-				65AABE8324D183C900136986 /* Assets.xcassets */,
 				65AABE9F24D1BF8D00136986 /* Calendar.swift */,
 				65AABE9D24D1BE6100136986 /* CalendarView.swift */,
 				65AABE8124D183C700136986 /* ContentView.swift */,
 				6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */,
-				65AABE8B24D183C900136986 /* Info.plist */,
-				65AABE8824D183C900136986 /* LaunchScreen.storyboard */,
 				65AABE9324D1A3BE00136986 /* Log.swift */,
 				651A042F24D290790062162B /* LogStore.swift */,
 				65AABE9724D1A53800136986 /* LogView.swift */,
 				65AABE9B24D1AB4100136986 /* NextUpRow.swift */,
 				65AABE9524D1A52E00136986 /* NextUpView.swift */,
-				65AABE8524D183C900136986 /* Preview Content */,
 				65AABE7F24D183C700136986 /* SceneDelegate.swift */,
-				6581E3F724D2249B006B56D7 /* SkillRepeat.entitlements */,
 				65AABE9124D1A36B00136986 /* Skills.swift */,
-				65AABE9924D1A5D700136986 /* street_workout_skills.txt */,
 			);
 			path = SkillRepeat;
-			sourceTree = "<group>";
-		};
-		65AABE8524D183C900136986 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				65AABE8624D183C900136986 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65AABE8A24D183C900136986 /* LaunchScreen.storyboard in Resources */,
-				65AABE8724D183C900136986 /* Preview Assets.xcassets in Resources */,
-				65AABE9A24D1A5D700136986 /* street_workout_skills.txt in Resources */,
-				65AABE8424D183C900136986 /* Assets.xcassets in Resources */,
+				651A043A24D2AF920062162B /* street_workout_skills.txt in Resources */,
+				651A043924D2AF920062162B /* LaunchScreen.storyboard in Resources */,
+				651A043824D2AF920062162B /* Assets.xcassets in Resources */,
+				651A043E24D2B08B0062162B /* PreviewAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,10 +213,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		65AABE8824D183C900136986 /* LaunchScreen.storyboard */ = {
+		651A043424D2AF920062162B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				65AABE8924D183C900136986 /* Base */,
+				651A043524D2AF920062162B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -334,12 +342,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SkillRepeat/SkillRepeat.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkillRepeat/Resources/SkillRepeat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SkillRepeat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SkillRepeat/Resources/PreviewContent\"";
 				DEVELOPMENT_TEAM = HA769W8DPU;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SkillRepeat/Info.plist;
+				INFOPLIST_FILE = SkillRepeat/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,12 +364,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SkillRepeat/SkillRepeat.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkillRepeat/Resources/SkillRepeat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SkillRepeat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SkillRepeat/Resources/PreviewContent\"";
 				DEVELOPMENT_TEAM = HA769W8DPU;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SkillRepeat/Info.plist;
+				INFOPLIST_FILE = SkillRepeat/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
