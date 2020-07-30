@@ -28,6 +28,7 @@ struct LogView_Previews: PreviewProvider {
         NavigationView {
             LogView(log: Log.testInstance)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .environment(\.locale, Locale(identifier: "ru"))
     }
 }

@@ -39,6 +39,7 @@ struct CalendarView_Previews: PreviewProvider {
                 skill: Skills.testInstance.items[0],
                 log: Log.testInstance)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .environment(\.locale, Locale(identifier: "ru"))
     }
 }

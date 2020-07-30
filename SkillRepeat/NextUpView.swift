@@ -35,5 +35,6 @@ struct NextUpView_Previews: PreviewProvider {
                skills: Skills.testInstance,
                log: Log.testInstance)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

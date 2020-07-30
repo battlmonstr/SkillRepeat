@@ -41,6 +41,7 @@ struct NextUpRow: View {
                 NavigationView {
                     self.calendarViewFactory(self.skill)
                 }
+                .navigationViewStyle(StackNavigationViewStyle())
             }
         }
     }
