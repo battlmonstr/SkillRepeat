@@ -9,7 +9,7 @@ struct CalendarView: View {
 
     var body: some View {
         List(calendar.recentDays, id: \.self) { day in
-            Button(action: { /* TODO: weak? */ self.doneOnDay(day: day) }) {
+            Button(action: { self.doneOnDay(day: day) }) {
                 HStack {
                     Image(systemName: "checkmark")
                     Text("done")

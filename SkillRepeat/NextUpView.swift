@@ -9,9 +9,9 @@ struct NextUpView: View {
             NextUpRow(
                 skill: skill,
                 isDoneToday: self.log.isDoneToday(skill),
-                doneTodayAction: { /* TODO: weak? */ self.log.toggleDoneToday(skill) },
+                doneTodayAction: { self.log.toggleDoneToday(skill) },
                 isDoneYesterday: self.log.isDoneYesterday(skill),
-                doneYesterdayAction: { /* TODO: weak? */ self.log.toggleDoneYesterday(skill) },
+                doneYesterdayAction: { self.log.toggleDoneYesterday(skill) },
                 calendarViewFactory: self.calendarViewFactory())
         }
         .navigationBarTitle("Next up")
