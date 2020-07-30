@@ -8,10 +8,12 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            NextUpView(skills: skills, log: log)
+            NavigationView { NextUpView(skills: skills, log: log) }
+                .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem { nextUpTabItem }
                 .tag(0)
-            LogView(log: log)
+            NavigationView { LogView(log: log) }
+                .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem { logTabItem }
                 .tag(1)
         }
