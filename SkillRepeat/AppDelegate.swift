@@ -1,13 +1,33 @@
 import UIKit
+import Combine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private(set) var skills: Skills!
+    private(set) var log: Log!
 
+    private var logStore: LogStore!
+    private var logStoreUpdater: AnyCancellable!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.skills = Skills(resourceName: "street_workout_skills.txt")
+        self.logStore = LogStore(jsonFileName: "log.json")
+        self.log = Log((try? logStore.load()) ?? [])
+        self.logStoreUpdater = startUpdatingLogStore()
         return true
+    }
+
+    private func startUpdatingLogStore() -> AnyCancellable {
+        return log.objectWillChange.sink { [weak self] in
+            if let entries = self?.log.entries {
+                do {
+                    try self?.logStore.save(entries: entries)
+                } catch {
+                    print("logStore.save error: \(error)")
+                }
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle

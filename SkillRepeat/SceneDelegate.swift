@@ -6,36 +6,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    private var skills: Skills?
-    private var logStore: LogStore?
-    private var log: Log?
-    private var logStoreUpdater: AnyCancellable?
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
-        let skills = Skills(resourceName: "street_workout_skills.txt")
-        assert(self.skills == nil)
-        self.skills = skills
-
-        let logStore = LogStore(jsonFileName: "log.json")
-        assert(self.logStore == nil)
-        self.logStore = logStore
-
-        let log = Log((try? logStore.load()) ?? [])
-        assert(self.log == nil)
-        self.log = log
-
-        assert(self.logStoreUpdater == nil)
-        self.logStoreUpdater = log.objectWillChange.sink { [weak self] in
-            if let entries = self?.log?.entries {
-                do {
-                    try self?.logStore?.save(entries: entries)
-                } catch {
-                    print("logStore.save error: \(error)")
-                }
-            }
-        }
+        
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let skills: Skills = app.skills
+        let log: Log = app.log
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView(skills: skills, log: log)
