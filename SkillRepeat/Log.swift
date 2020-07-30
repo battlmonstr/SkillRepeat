@@ -65,6 +65,23 @@ class Log: ObservableObject {
         self.objectWillChange.send()
     }
 
+    private func recentEntry(_ skill: Skill) -> LogEntry? {
+        return entries.first { $0.skill == skill }
+    }
+
+    private func skillDeadline(_ skill: Skill) -> Date {
+        if let entry = recentEntry(skill) {
+            return entry.date.addingTimeInterval(skill.period)
+        }
+        return Date.distantPast
+    }
+
+    func sortSkillsByDeadline(skills: Skills) -> [Skill] {
+        let skillDeadlines = skills.items.map { ($0, self.skillDeadline($0)) }
+        let sortedSkillDeadlines = skillDeadlines.sorted { $0.1 < $1.1 }
+        return sortedSkillDeadlines.map { $0.0 }
+    }
+
     static var testInstance: Log {
         let skills = Skills.testInstance.items
 

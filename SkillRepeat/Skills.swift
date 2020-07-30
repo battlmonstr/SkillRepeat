@@ -1,7 +1,10 @@
 import Foundation
+import SwiftDate
 
 struct Skill: CustomDebugStringConvertible, Codable, Equatable {
     let name: String
+    let period: TimeInterval = 2.weeks.timeInterval
+
     var debugDescription: String { name }
 
     static func == (lhs: Skill, rhs: Skill) -> Bool {

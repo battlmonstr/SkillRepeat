@@ -5,7 +5,7 @@ struct NextUpView: View {
     @ObservedObject private(set) var log: Log
 
     var body: some View {
-        List(skills.items, id: \.name) { skill in
+        List(log.sortSkillsByDeadline(skills: skills), id: \.name) { skill in
             NextUpRow(
                 skill: skill,
                 isDoneToday: self.log.isDoneToday(skill),
