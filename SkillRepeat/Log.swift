@@ -71,6 +71,7 @@ class Log: ObservableObject {
 
     private func addEntry(date: Date, skill: Skill) {
         entries.append(LogEntry(date: date, skill: skill))
+        entries.sort(by: { $0.date < $1.date })
         self.objectWillChange.send()
     }
 
