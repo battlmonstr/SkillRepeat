@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NextUpView: View {
-    let skills: Skills
+    @ObservedObject private(set) var skills: Skills
     @ObservedObject private(set) var log: Log
 
     var body: some View {
@@ -24,8 +24,8 @@ struct NextUpView: View {
 
     private var skillsTextBinding: Binding<String> {
         return Binding(
-            get: { "TODO" },
-            set: { _ in }
+            get: { self.skills.loadText() },
+            set: { self.skills.saveText(text: $0) }
         )
     }
 

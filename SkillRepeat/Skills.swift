@@ -14,13 +14,34 @@ struct Skill: CustomDebugStringConvertible, Codable, Equatable {
     }
 }
 
-class Skills {
-    let items: [Skill]
-    let store: SkillsStore?
+class Skills: ObservableObject {
+    private(set) var items: [Skill]
+    private let store: SkillsStore?
 
     init(_ items: [Skill], store: SkillsStore? = nil) {
         self.items = items
         self.store = store
+    }
+
+    func loadText() -> String {
+        guard let store = self.store else { return "" }
+        do {
+            return try store.load()
+        } catch {
+            print("Skills.loadText error: \(error)")
+            return ""
+        }
+    }
+
+    func saveText(text: String) {
+        guard let store = self.store else { return }
+        do {
+            try store.save(text: text)
+            self.items = try store.loadAndParse()
+            self.objectWillChange.send()
+        } catch {
+            print("Skills.saveText error: \(error)")
+        }
     }
 
     static var testInstance: Skills {
