@@ -8,10 +8,8 @@ struct NextUpView: View {
         List(log.sortSkillsByDeadline(skills: skills), id: \.name) { skill in
             NextUpRow(
                 skill: skill,
-                isDoneToday: self.log.isDoneToday(skill),
-                doneTodayAction: { self.log.toggleDoneToday(skill) },
-                isDoneYesterday: self.log.isDoneYesterday(skill),
-                doneYesterdayAction: { self.log.toggleDoneYesterday(skill) },
+                isDoneToday: self.isDoneTodayBinding(skill),
+                isDoneYesterday: self.isDoneYesterdayBinding(skill),
                 calendarViewFactory: self.calendarViewFactory())
         }
         .navigationBarTitle("Next up")
@@ -25,6 +23,20 @@ struct NextUpView: View {
             }
             return nil
         }
+    }
+
+    private func isDoneTodayBinding(_ skill: Skill) -> Binding<Bool> {
+        return Binding(
+            get: { self.log.isDoneToday(skill) },
+            set: { _ in self.log.toggleDoneToday(skill) }
+        )
+    }
+
+    private func isDoneYesterdayBinding(_ skill: Skill) -> Binding<Bool> {
+        return Binding(
+            get: { self.log.isDoneYesterday(skill) },
+            set: { _ in self.log.toggleDoneYesterday(skill) }
+        )
     }
 }
 

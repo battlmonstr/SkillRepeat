@@ -9,6 +9,7 @@ This app is showcasing SwiftUI:
 * a custom view modifier - DoneAccent
 * how to create the models in AppDelegate once
 * subscribe to ObservableObject manually
+* custom Binding to a model
 * works on macOS
 
 
