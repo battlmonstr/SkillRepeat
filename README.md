@@ -10,6 +10,7 @@ This app is showcasing SwiftUI:
 * how to create the models in AppDelegate once
 * subscribe to ObservableObject manually
 * custom Binding to a model
+* wrapping a UITextView with 2-way binding
 * works on macOS
 
 

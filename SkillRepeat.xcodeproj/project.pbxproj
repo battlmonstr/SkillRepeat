@@ -13,6 +13,7 @@
 		651A043A24D2AF920062162B /* street_workout_skills.txt in Resources */ = {isa = PBXBuildFile; fileRef = 651A043624D2AF920062162B /* street_workout_skills.txt */; };
 		651A043E24D2B08B0062162B /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651A043D24D2B08B0062162B /* PreviewAssets.xcassets */; };
 		6521EDE724D1E6B9003FEAA5 /* DoneAccent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */; };
+		652CDA8824D4518B00F840E0 /* SkillsEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CDA8724D4518B00F840E0 /* SkillsEditor.swift */; };
 		65919C4A24D215BB00B623BF /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 65919C4924D215BB00B623BF /* SwiftDate */; };
 		65AABE7E24D183C700136986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE7D24D183C700136986 /* AppDelegate.swift */; };
 		65AABE8024D183C700136986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AABE7F24D183C700136986 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		651A043724D2AF920062162B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651A043D24D2B08B0062162B /* PreviewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PreviewAssets.xcassets; sourceTree = "<group>"; };
 		6521EDE624D1E6B9003FEAA5 /* DoneAccent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAccent.swift; sourceTree = "<group>"; };
+		652CDA8724D4518B00F840E0 /* SkillsEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsEditor.swift; sourceTree = "<group>"; };
 		65AABE7A24D183C700136986 /* SkillRepeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillRepeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AABE7D24D183C700136986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65AABE7F24D183C700136986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				65AABE9524D1A52E00136986 /* NextUpView.swift */,
 				65AABE7F24D183C700136986 /* SceneDelegate.swift */,
 				65AABE9124D1A36B00136986 /* Skills.swift */,
+				652CDA8724D4518B00F840E0 /* SkillsEditor.swift */,
 			);
 			path = SkillRepeat;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				65AABE9224D1A36B00136986 /* Skills.swift in Sources */,
 				65AABE9424D1A3BE00136986 /* Log.swift in Sources */,
 				65AABE8024D183C700136986 /* SceneDelegate.swift in Sources */,
+				652CDA8824D4518B00F840E0 /* SkillsEditor.swift in Sources */,
 				65AABE9E24D1BE6100136986 /* CalendarView.swift in Sources */,
 				65AABE8224D183C700136986 /* ContentView.swift in Sources */,
 				6521EDE724D1E6B9003FEAA5 /* DoneAccent.swift in Sources */,

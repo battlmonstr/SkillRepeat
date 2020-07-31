@@ -13,6 +13,20 @@ struct NextUpView: View {
                 calendarViewFactory: self.calendarViewFactory())
         }
         .navigationBarTitle("Next up")
+        .navigationBarItems(trailing: self.editButton)
+    }
+
+    private var editButton: some View {
+        NavigationLink(destination: SkillsEditor(skillsText: skillsTextBinding)) {
+            Image(systemName: "square.and.pencil")
+        }
+    }
+
+    private var skillsTextBinding: Binding<String> {
+        return Binding(
+            get: { "TODO" },
+            set: { _ in }
+        )
     }
 
     private func calendarViewFactory() -> NextUpRow.CalendarViewFactory {
