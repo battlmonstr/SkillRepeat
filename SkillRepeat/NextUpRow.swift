@@ -3,15 +3,23 @@ import SwiftUI
 struct NextUpRow: View {
     let skill: Skill
 
-    let isDoneToday: Bool
-    let doneTodayAction: () -> Void
-    let isDoneYesterday: Bool
-    let doneYesterdayAction: () -> Void
+    @Binding var isDoneToday : Bool
+    @Binding var isDoneYesterday : Bool
 
     typealias CalendarViewFactory = (Skill) -> CalendarView?
     let calendarViewFactory: CalendarViewFactory
 
     @State private var isCalendarShown = false
+    
+    init(skill : Skill,
+         isDoneToday : Binding<Bool>,
+         isDoneYesterday : Binding<Bool>,
+         calendarViewFactory : @escaping CalendarViewFactory ) {
+        self.skill = skill
+        self._isDoneToday = isDoneToday
+        self._isDoneYesterday = isDoneYesterday
+        self.calendarViewFactory = calendarViewFactory
+    }
 
     var body: some View {
         HStack {
@@ -51,11 +59,11 @@ struct NextUpRow: View {
     }
 
     private func doneToday() {
-        self.doneTodayAction()
+        self.isDoneToday = !self.isDoneToday
     }
 
     private func doneYesterday() {
-        self.doneYesterdayAction()
+        self.isDoneYesterday  = !self.isDoneYesterday
     }
 
     private func showCalendar() {
@@ -68,18 +76,24 @@ struct NextUpRow_Previews: PreviewProvider {
         Group {
             NextUpRow(
                 skill: Skills.testInstance.items[0],
-                isDoneToday: true,
-                doneTodayAction: {},
-                isDoneYesterday: false,
-                doneYesterdayAction: {},
-                calendarViewFactory: { _ in nil })
+                isDoneToday: Binding(
+                    get: { true },
+                    set: { isSet in }),
+                isDoneYesterday: Binding(
+                    get: { false },
+                    set: { isSet in }),
+                calendarViewFactory: { _ in nil }
+            )
             NextUpRow(
                 skill: Skills.testInstance.items[1],
-                isDoneToday: false,
-                doneTodayAction: {},
-                isDoneYesterday: true,
-                doneYesterdayAction: {},
-                calendarViewFactory: { _ in nil })
+                isDoneToday: Binding(
+                    get: { false },
+                    set: { isSet in }),
+                isDoneYesterday: Binding(
+                    get: { true },
+                    set: { isSet in }),
+                calendarViewFactory: { _ in nil }
+            )
         }
         .previewLayout(.fixed(width: 300, height: 50))
     }
