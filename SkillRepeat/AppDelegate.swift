@@ -11,7 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var logStoreUpdater: AnyCancellable!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.skills = Skills(resourceName: "street_workout_skills.txt")
+        let skillsStore = SkillsStore("skills.txt", resourceName: "street_workout_skills.txt")
+        self.skills = Skills((try? skillsStore.loadAndParse()) ?? [], store: skillsStore)
         self.logStore = LogStore(jsonFileName: "log.json")
         self.log = Log((try? logStore.load()) ?? [])
         self.logStoreUpdater = startUpdatingLogStore()
