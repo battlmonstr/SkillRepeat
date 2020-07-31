@@ -24,13 +24,20 @@ class Skills {
     convenience init(resourceName: String) {
         let url = Bundle.main.url(forResource: resourceName, withExtension: nil)!
         let text = try! String(contentsOf: url)
+        self.init(Skills.parseSkillsText(text))
+    }
+
+    private static func parseSkillsText(_ text: String) -> [Skill] {
         let lines = text.components(separatedBy: CharacterSet.newlines)
+            .map({ $0.trimmingCharacters(in: .whitespaces )})
             .filter({ !$0.isEmpty })
-        self.init(lines.map { Skills.parseSkillLine($0) })
+        return lines.map { Skills.parseSkillLine($0) }
     }
 
     private static func parseSkillLine(_ line: String) -> Skill {
-        let parts: [String] = line.components(separatedBy: "\t").filter({ !$0.isEmpty })
+        let parts: [String] = line.components(separatedBy: "@")
+            .map({ $0.trimmingCharacters(in: .whitespaces )})
+            .filter({ !$0.isEmpty })
         let name = parts[0]
         let period: TimeInterval? = (parts.count > 1) ? parsePeriod(parts.last!) : nil
         return Skill(name: name, period: period ?? Skill.defaultPeriod)
@@ -41,8 +48,12 @@ class Skills {
         guard let num = Int(parts[0]) else { return nil }
         let unit = parts.last!
         switch unit {
+            case "d": fallthrough
+            case "day": fallthrough
             case "days":
                 return num.days.timeInterval
+            case "w": fallthrough
+            case "week": fallthrough
             case "weeks":
                 return num.weeks.timeInterval
             default:

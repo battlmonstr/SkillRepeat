@@ -2,9 +2,9 @@ planche
 f.lever
 b.lever
 flag
-handstand	10 days
-giants		1 weeks
-dynamic		1 weeks
+handstand   @ 10 days
+giants      @ 1 week
+dynamic     @ 1 week
 flare
 rings
-splits		1 weeks
+splits      @ 1 week
